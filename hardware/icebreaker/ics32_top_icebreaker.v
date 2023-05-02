@@ -19,7 +19,6 @@ module ics32_top_icebreaker #(
     output vga_hsync,
     output vga_vsync,
 
-    output vga_clk,
     output vga_de,
 
     output led_r,
@@ -99,24 +98,7 @@ module ics32_top_icebreaker #(
         .clk_2x(clk_2x)
     );
 
-    // --- DVI video (dual PMOD with HDMI compatible port) ---
-
-    // CLK
-
-    SB_IO #(
-        .PIN_TYPE(6'b010000),
-        .PULLUP(1'b0),
-        .NEG_TRIGGER(1'b0),
-        .IO_STANDARD("SB_LVCMOS")
-    ) vga_clk_sbio (
-        .OUTPUT_CLK(clk_2x),
-
-        .PACKAGE_PIN(vga_clk),
-        .D_OUT_0(1'b0),
-        .D_OUT_1(1'b1)
-    );
-
-    // RGBS + DE
+    // --- VGA video ---
 
     SB_IO #(
         .PIN_TYPE(6'b010100),
@@ -304,7 +286,7 @@ module ics32_top_icebreaker #(
         .CLK_2X_FREQ(CLK_2X_FREQ),
         .ENABLE_WIDESCREEN(ENABLE_WIDESCREEN),
         .ENABLE_FAST_CPU(0),
-        .RESET_DURATION_EXPONENT(24),
+        .RESET_DURATION_EXPONENT(2),
         .ENABLE_BOOTLOADER(1),
         .BOOTLOADER_SIZE(256),
     ) ics32 (

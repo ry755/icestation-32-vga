@@ -1,4 +1,14 @@
-# icestation-32
+# VGA fork
+
+This is a fork of the original [icestation-32](https://github.com/dan-rodrigues/icestation-32) project.
+It is slightly modified to use a standard VGA PMOD instead of an HDMI PMOD for the iCEBreaker target.
+It is also modified to work with my specific iCEBreaker board, which requires the reset duration to be lowered for reasons unknown to me
+(something to do with the flash chip I think). The only remaining issue as far as I know is the fact that it hangs during the RISC-V bootloader after a power cycle,
+requiring a manual reset by reflashing a software demo in order for it to run properly.
+
+Other changes may be made in the future, such as creating more demos.
+
+# Original README
 
 This is a compact open-source FPGA game console targetting the Lattice iCE40 UltraPlus series. It's being developed using the open-source yosys and nextpnr tools and can be run on both the [iCEBreaker](https://github.com/icebreaker-fpga/icebreaker)** and [ULX3S](https://github.com/emard/ulx3s)* boards.
 
@@ -186,4 +196,3 @@ Info: 	         ICESTORM_LC:  4790/ 5280    90%
 * Many bits of cleanup and optimization
 * Support for more USB gamepads
 * Confirm ULX3S boards with ISSI flash work as expected
-

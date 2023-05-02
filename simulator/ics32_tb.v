@@ -39,9 +39,9 @@ module ics32_tb(
     input btn_start
 );
     ics32 #(
-        .CLK_1X_FREQ(`CLK_1X_WIDESCREEN),
-        .CLK_2X_FREQ(`CLK_2X_WIDESCREEN),
-        .ENABLE_WIDESCREEN(1),
+        .CLK_1X_FREQ(`CLK_1X_STANDARD),
+        .CLK_2X_FREQ(`CLK_2X_STANDARD),
+        .ENABLE_WIDESCREEN(0),
         .ENABLE_FAST_CPU(0),
         .RESET_DURATION_EXPONENT(2),
         .ADPCM_STEP_LUT_PATH("../hardware/adpcm_step_lut.hex"),

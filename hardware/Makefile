@@ -4,8 +4,8 @@
 # - VM_640x480 (25Mhz)
 # - VM_848x480 (33.75MHz)
 
-# VIDEO_MODE = VM_640x480
-VIDEO_MODE = VM_848x480
+VIDEO_MODE = VM_640x480
+# VIDEO_MODE = VM_848x480
 
 ###
 
@@ -121,4 +121,3 @@ ulx3s_prog: $(ULX3S_PREFIX).bit
 
 .SECONDARY:
 .PHONY: main-build icebreaker_prog ulx3s_prog clean count
-
